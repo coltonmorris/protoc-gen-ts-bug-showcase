@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    ["transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }]
+  ],
+  "presets": [
+    "es2017",
+    "stage-0",
+    "react"
+  ]
+}
