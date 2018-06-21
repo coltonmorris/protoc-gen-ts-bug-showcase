@@ -17,6 +17,7 @@ echo "You appear to be running on ${platform}"
 echo "Ensuring we have NPM packages installed..."
 npm install
 
+
 PROTOC_VERSION="3.5.1"
 echo "Downloading protoc v${PROTOC_VERSION} for ${platform}..."
 mkdir -p protoc
@@ -43,10 +44,7 @@ $PROTOC \
   --plugin=protoc-gen-ts=node_modules/.bin/protoc-gen-ts \
   --js_out=import_style=commonjs,binary:$EXAMPLES_GENERATED_DIR \
   --ts_out=service=true:$EXAMPLES_GENERATED_DIR \
-  ./proto/othercom/*.proto \
-  ./proto/examplecom/*.proto \
   ./proto/collision/*.proto \
-  ./proto/*.proto
 
 # Cleanup downloaded proto directory
 rm -r protoc
